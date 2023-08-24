@@ -62,7 +62,7 @@ blogRouter.patch('/blogs/:id/like', async (req, res) => {
         if (!blog) return res.send({ msg: `Blog Not Found!` })
         blog.likes++;
         await BlogModel.findByIdAndUpdate(id, blog);
-        res.status(204).send({ msg: `Likes Updated` })
+        res.status(200).send({ msg: `Likes Updated` })
     } catch (error) {
         res.status(400).send({ err: error.message })
     }
