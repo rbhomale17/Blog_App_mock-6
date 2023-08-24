@@ -10,7 +10,7 @@ blogRouter.use(authMiddleware)
 blogRouter.get('/blogs', blogsFiltering, async (req, res) => {
     const { userData, blogs } = req.body;
     try {
-        res.send({ blogs })
+        res.send({ msg: 'Data fetch success', blogs })
     } catch (error) {
         res.status(400).send({ err: error.message })
     }
